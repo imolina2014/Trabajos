@@ -7,6 +7,14 @@ var ConPractico = [];
 var EvaPractico = [];
 var Brigadistas = [];
 
+//Rut1,Nombre1,Nombre2,Apellido1,Apellido2,Edad,FechaNac,Celular;
+
+
+
+
+
+
+
 //Se lee el texto y se deja su contenido en la variable TextoLeido
 function processFiles(files) {
 	var file = files[0];
@@ -23,6 +31,7 @@ function processFiles(files) {
 
 
 function procesamiento() {
+	cont = 0;
 	var filtro1 = TextoLeido.split(";");              //Dividimos por ;
 	for (var i = filtro1.length - 2; i >= 0; i--) {
 		var individuo = filtro1[i].split(",");        //Dividimos por ,
@@ -30,6 +39,42 @@ function procesamiento() {
 	}
 
 	for (var i = Postulantes.length - 1; i >= 0; i--) {  //Mostramos los elementos
-		alert(Postulantes[i][0]); 
+
+
+		var checkbox = document.createElement('input');
+		checkbox.type = "checkbox";
+		checkbox.name = Postulantes[i][0];
+		checkbox.value = Postulantes[i][0];
+		checkbox.id = Postulantes[i][0];    
+		checkbox1.appendChild(checkbox);
+		var checkbox = document.createTextNode(Postulantes[i][1]+" "+Postulantes[i][3]+" "+Postulantes[i][4]);
+		checkbox1.appendChild(checkbox);
+
+		cont++;
+		if (cont==5){
+			var checkbox = document.createElement('br');
+			checkbox1.appendChild(checkbox);
+			cont = 0;
+		}
+		
 	}
+
+}
+
+function recuperar_check(){
+	
+	for (var i = Postulantes.length - 1; i >= 0; i--) {
+
+		var porId=document.getElementById(Postulantes[i][0]).checked;
+		if (porId==true){
+			alert("Esta chekeado");
+			
+
+		}else{
+			alert("No esta chekeado");
+		}
+	}
+
+
+
 }
