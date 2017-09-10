@@ -2,12 +2,61 @@
 	<head>
 		<title>Red Petri</title> <meta charset="utf-8">
 		<script type="text/javascript" src="js/funcionamiento.js"></script>
-	</head>
-		<div>
-			<input id="fileInput" type="file" size="50" onchange="processFiles(this.files)">
-			<div id="fileOutput"></div>
+<!-- 		<script type="text/javascript" src="js/ProcesamientoMenu.js"></script> -->
+		
+<!-- 		------------------------------------------------------------------------------ -->
 
-			<button onclick="procesamiento()">Cargar</button>
-		</div>
+		<style type="text/css">
+			#contenedor{ 
+				background-color:grey; 
+				position:absolute; /*El div será ubicado con relación a la pantalla*/
+				left:0px; /*A la derecha deje un espacio de 0px*/
+				right:0px; /*A la izquierda deje un espacio de 0px*/
+				bottom:0px; /*Abajo deje un espacio de 0px*/
+				height:150px; /*alto del div*/
+				z-index:0;
+			}
+			.Description{
+				right: 400px;
+				background-color: white;
+
+			}
+
+		</style>	
+
+<!-- 		------------------------------------------------------------------------------ -->
+	</head>
+	<body>
+		
+		
+
+			<button onclick="Oculta()">fjjioshfoisf</button>
+
+			<div id='aaa'></div>
+
+<!-- 		------------------------------------------------------------------------------ -->
+			<div id="contenedor">
+				<!-- <div id="fileOutput"></div> -->
+			
+				<div id="PrimeraFase">
+					<div class="Description"><p>Primero que nada seleccione el archivo que contiene los postulantes a brigadistas.</p></div>
+					<input id="fileInput" type="file" size="50" onchange="processFiles(this.files)">
+					<button onclick="document.getElementById('PrimeraFase').style.display = 'none';document.getElementById('SegundaFase').style.display = 'block';procesamiento();">Cargar postulantes</button>
+				</div>
+
+
+				<div id="SegundaFase" style="display: none;">
+					<div class="Description"><p>AHORA SELECCIONE LOS SUJETOS QUE SUPERARON LA FASE DE POSTULACION.</p></div>
+					
+					<div id="checkbox1"></div>
+
+					<button onclick="recuperar_check()">Siguiente</button>
+				</div>
+
+			</div>
+
+<!-- 		------------------------------------------------------------------------------ -->
+
+		
 	</body>
 </html>
