@@ -3,6 +3,7 @@ var Postulantes = [];
 var Aspirantes  = [];
 var ConTeorico  = [];
 var ConPractico = [];
+var ConTodo     = [];
 var Brigadistas = [];
 var Reprobados = []; 
 
@@ -281,6 +282,10 @@ function push_array(paso){   //PASO HABLA DEL PASO DEL HTML (POSTULANTE, ASPIRAN
 	}
 	if (paso==4){
 		a= ConPractico;
+		b= ConTodo;
+	}
+	if (paso==5){
+		a= ConTodo;
 		b= Brigadistas;
 	}
 	for (var i = a.length - 1; i >= 0; i--) {
@@ -314,6 +319,12 @@ function push_array(paso){   //PASO HABLA DEL PASO DEL HTML (POSTULANTE, ASPIRAN
 			muestra_conpractico();
 			muestra_reprobados();
 		}
+
+
+		//AQUI HABRIA QUE AGREGAR EL ORO ESTADO NO ENTIENDO TU LOGICA
+
+
+
 	if(paso==4)
 		{ 
 			muestra_brigadistas();
@@ -335,13 +346,17 @@ function muestra_checks(paso){
 		a= ConPractico;
 		b= checkbox4;
 	}
-	if (paso==4){													//SOLO EN CASO DE QUE SEA EL ULTIMO PASO SE MOSTRARAN TODOS LOS DATOS DE LOS BRIGADISTAS FINALES
+	if (paso==4){
+		a= ConTodo;
+		b= checkbox5;
+	}
+	if (paso==5){													//SOLO EN CASO DE QUE SEA EL ULTIMO PASO SE MOSTRARAN TODOS LOS DATOS DE LOS BRIGADISTAS FINALES
 		a= Brigadistas;
 		for (var i = Brigadistas.length - 1; i >= 0; i--) {  
 			var checkbox = document.createTextNode(Brigadistas[i]);
-			checkbox5.appendChild(checkbox);
+			checkbox6.appendChild(checkbox);
 			var checkbox = document.createElement('br');
-				checkbox5.appendChild(checkbox);
+				checkbox6.appendChild(checkbox);
 		}
 		alert(Reprobados);
 	}
