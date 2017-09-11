@@ -27,19 +27,14 @@
 <!-- 		------------------------------------------------------------------------------ -->
 	</head>
 	<body>
-		
-		
 
-			<button onclick="Oculta()">fjjioshfoisf</button>
-
-			<div id='aaa'></div>
 
 <!-- 		------------------------------------------------------------------------------ -->
 			<div id="contenedor">
 				<!-- <div id="fileOutput"></div> -->
 			
 				<div id="PrimeraFase">
-					<div class="Description"><p>Primero que nada seleccione el archivo que contiene los postulantes a brigadistas.</p></div>
+					<div class="Description"><p>Primero que nada, seleccione el archivo que contiene los postulantes a brigadistas.</p></div>
 					<input id="fileInput" type="file" size="50" onchange="processFiles(this.files)">
 					<button onclick="document.getElementById('PrimeraFase').style.display = 'none';document.getElementById('SegundaFase').style.display = 'block';procesamiento();">Cargar postulantes</button>
 				</div>
@@ -50,7 +45,36 @@
 					
 					<div id="checkbox1"></div>
 
-					<button onclick="recuperar_check()">Siguiente</button>
+					<button onclick="document.getElementById('SegundaFase').style.display = 'none';document.getElementById('TerceraFase').style.display = 'block';push_array(1)">Siguiente</button>
+				</div>
+
+				<div id="TerceraFase" style="display: none;">
+					<div class="Description"><p>AHORA SELECCIONE LOS ASPIRANTES QUE SUPERARON LA PRIMERA ETAPA DE PREAPARACION Y SUS PRUEBAS</p></div>
+					<div id="checkbox2"></div>
+
+					<button onclick="document.getElementById('TerceraFase').style.display = 'none';document.getElementById('CuartaFase').style.display = 'block';push_array(2)">Siguiente</button>
+				</div>
+
+				<div id="CuartaFase" style="display: none;">
+					<div class="Description"><p>AHORA SELECCIONE LOS ASPIRANTES QUE SE PREPARARON TERORICAMENTE Y PASARON LAS PRUEBAS.</p></div>
+					<div id="checkbox3"></div>
+
+					<button onclick="document.getElementById('CuartaFase').style.display = 'none';document.getElementById('QuintaFase').style.display = 'block';push_array(3)">Siguiente</button>
+				</div>
+
+				<div id="QuintaFase" style="display: none;">
+					<div class="Description"><p>AHORA SELECCIONE CUANTOS ASPIRANTES RELIZARON EJERCICIOS PRACTICOS Y PASARON LAS PRUEBAS</p></div>
+					<div id="checkbox4"></div>
+
+					<button onclick="document.getElementById('QuintaFase').style.display = 'none';document.getElementById('SextaFase').style.display = 'block';push_array(4)">Siguiente</button>
+				</div>
+
+
+				<div id="SextaFase" style="display: none;">
+					<div class="Description"><p>ESTOS SON LOS BRIGADISTAS FINALES</p></div>
+					<div id="checkbox5"></div>
+
+
 				</div>
 
 			</div>
