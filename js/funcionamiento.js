@@ -347,10 +347,6 @@ function push_array(paso){   //PASO HABLA DEL PASO DEL HTML (POSTULANTE, ASPIRAN
 			muestra_reprobados();	
 		}
 
-		//AQUI HABRIA QUE AGREGAR EL ORO ESTADO NO ENTIENDO TU LOGICA
-
-
-
 	
 	muestra_checks(paso);											//PASAMOS A LA FUNCION DE MAS ABAJO
 }
@@ -380,10 +376,8 @@ function muestra_checks(paso){
 			var checkbox = document.createElement('br');
 				checkbox6.appendChild(checkbox);
 		}
-		alert(Reprobados);
 	}
-	if (paso==1 || paso==2 || paso==3 ){							//EN CASO DE QUE NO SEA EL PASO FINAL SE CREAN CHECKBOX CON LOS ASPIRANTES QUE VA AVANZANDO.
-		alert("Entra")
+	if (paso==1 || paso==2 || paso==3 || paso==4 ){							//EN CASO DE QUE NO SEA EL PASO FINAL SE CREAN CHECKBOX CON LOS ASPIRANTES QUE VA AVANZANDO.
 		for (var i = a.length - 1; i >= 0; i--) {  
 			var checkbox = document.createElement('input');
 			checkbox.type = "checkbox";
