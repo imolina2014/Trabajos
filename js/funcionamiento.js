@@ -121,6 +121,17 @@ function procesamiento() {
 	document.getElementById('Reprobados').innerHTML=str;
 	}
 
+	function muestra_contodo(argument) {
+	var aux = 0;
+	var str = "";
+	for (var i = ConTodo.length - 1; i >= 0; i--) {  //Mostramos los elementos
+		str += ConTodo[i][0] + " "; 
+		if((aux%2)==0) str+= "</br>";
+		aux++;
+	}
+	document.getElementById('ConTodo').innerHTML=str;
+	}
+
 
 
 
@@ -305,31 +316,42 @@ function push_array(paso){   //PASO HABLA DEL PASO DEL HTML (POSTULANTE, ASPIRAN
 
 	if(paso==1)
 		{
+			document.getElementById('Postulante').innerHTML="";
 			muestra_aspirantes();
 			muestra_reprobados();
 		} 
 
 	if(paso==2)
 		{ 
+			document.getElementById('Aspirante').innerHTML="";
 			muestra_conteorico();
 			muestra_reprobados();
 		}
 	if(paso==3) 
 		{
+			document.getElementById('ConTeorico').innerHTML="";
 			muestra_conpractico();
 			muestra_reprobados();
 		}
 
+	if(paso==4)
+		{   document.getElementById('ConPractico').innerHTML="";
+			muestra_contodo();
+			muestra_reprobados();
+		}
+
+	if(paso==5)
+		{
+			document.getElementById('ConTodo').innerHTML="";
+			muestra_brigadistas();
+			muestra_reprobados();	
+		}
 
 		//AQUI HABRIA QUE AGREGAR EL ORO ESTADO NO ENTIENDO TU LOGICA
 
 
 
-	if(paso==4)
-		{ 
-			muestra_brigadistas();
-			muestra_reprobados();
-		}
+	
 	muestra_checks(paso);											//PASAMOS A LA FUNCION DE MAS ABAJO
 }
 function muestra_checks(paso){   
