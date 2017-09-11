@@ -25,6 +25,7 @@ function processFiles(files) {
 
 function procesamiento() {
 	cont = 0;
+	
 	var filtro1 = TextoLeido.split(";");              //Dividimos por ;
 	for (var i = filtro1.length - 2; i >= 0; i--) {
 		var individuo = filtro1[i].split(",");        //Dividimos por ,
@@ -50,9 +51,74 @@ function procesamiento() {
 			cont = 0;
 		}	
 	}
+	muestra_postulantes();
 }
 
+	function muestra_postulantes() {
+	var aux = 0;
+	var str = "";
+	for (var i = Postulantes.length - 1; i >= 0; i--) {  //Mostramos los elementos
+		str += Postulantes[i][0] + " "; 
+		if((aux%2)==0) str+= "</br>";
+		aux++;
+	}
+	document.getElementById('Postulante').innerHTML=str;
+	}
 
+	function muestra_aspirantes(argument) {
+	var aux = 0;
+	var str = "";
+	for (var i = Aspirantes.length - 1; i >= 0; i--) {  //Mostramos los elementos
+		str += Postulantes[i][0] + " "; 
+		if((aux%2)==0) str+= "</br>";
+		aux++;
+	}
+	document.getElementById('Aspirante').innerHTML=str;
+	}
+
+	function muestra_conteorico(argument) {
+	var aux = 0;
+	var str = "";
+	for (var i = ConTeorico.length - 1; i >= 0; i--) {  //Mostramos los elementos
+		str += ConTeorico[i][0] + " "; 
+		if((aux%2)==0) str+= "</br>";
+		aux++;
+	}
+	document.getElementById('ConTeorico').innerHTML=str;
+	}
+
+	function muestra_conpractico(argument) {
+	var aux = 0;
+	var str = "";
+	for (var i = ConPractico.length - 1; i >= 0; i--) {  //Mostramos los elementos
+		str += ConPractico[i][0] + " "; 
+		if((aux%2)==0) str+= "</br>";
+		aux++;
+	}
+	document.getElementById('ConPractico').innerHTML=str;
+	}
+
+	function muestra_brigadistas(argument) {
+	var aux = 0;
+	var str = "";
+	for (var i = Brigadistas.length - 1; i >= 0; i--) {  //Mostramos los elementos
+		str += Brigadistas[i][0] + " "; 
+		if((aux%2)==0) str+= "</br>";
+		aux++;
+	}
+	document.getElementById('Brigadistas').innerHTML=str;
+	}
+
+	function muestra_reprobados(argument) {
+	var aux = 0;
+	var str = "";
+	for (var i = Reprobados.length - 1; i >= 0; i--) {  //Mostramos los elementos
+		str += Reprobados[i][0] + " "; 
+		if((aux%2)==0) str+= "</br>";
+		aux++;
+	}
+	document.getElementById('Reprobados').innerHTML=str;
+	}
 
 
 
@@ -231,6 +297,28 @@ function push_array(paso){   //PASO HABLA DEL PASO DEL HTML (POSTULANTE, ASPIRAN
 			Reprobados.push(a[i]);
 		}
 	}
+
+	if(paso==1)
+		{
+			muestra_aspirantes();
+			muestra_reprobados();
+		} 
+
+	if(paso==2)
+		{ 
+			muestra_conteorico();
+			muestra_reprobados();
+		}
+	if(paso==3) 
+		{
+			muestra_conpractico();
+			muestra_reprobados();
+		}
+	if(paso==4)
+		{ 
+			muestra_brigadistas();
+			muestra_reprobados();
+		}
 	muestra_checks(paso);											//PASAMOS A LA FUNCION DE MAS ABAJO
 }
 function muestra_checks(paso){   
