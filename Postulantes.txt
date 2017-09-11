@@ -1,0 +1,1 @@
+Rut1,Nombre1,Nombre2,Apellido1,Apellido2,Edad,FechaNac,Celular;Rut2,Nombre1,Nombre2,Apellido1,Apellido2,Edad,FechaNac,Celular;Rut3,Nombre1,Nombre2,Apellido1,Apellido2,Edad,FechaNac,Celular;Rut4,Nombre1,Nombre2,Apellido1,Apellido2,Edad,FechaNac,Celular;Rut5,Nombre1,Nombre2,Apellido1,Apellido2,Edad,FechaNac,Celular;
