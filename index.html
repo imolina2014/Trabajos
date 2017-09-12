@@ -7,33 +7,55 @@
 		
 										<!--  R E D   P E T R I -->
 <div>
-			<p>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Postulante 
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Aspirante
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Preparado Teorica
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Preparado Practica
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Conoc Amb Controlados
-			</p>
-			<p class="circulo" id="Postulante"></p>
-			<p class="circulo" id="Aspirante"></p>
-			<p class="circulo" id="ConTeorico"></p>
-			<p class="circulo" id="ConPractico"></p>
-			<p class="circulo" id="ConTodo"></p>
+			
+			<table>
+				<tr>
+					<td>Postulante</td>
+					<td></td>
+					<td>Aspirante</td>
+					<td></td>
+					<td>Preparado Teorica</td>
+					<td></td>
+					<td>Preparado Practica</td>
+					<td></td>
+					<td>Conoc Amb Controlados</td>
+					<td></td>
+					<td>Brigadista</td>
+
+				</tr>
+				<tr>
+					<td><p class="circulo" id="Postulante"></p></td>
+					<td>	<div class="Caja"></div><div class="cuerpo lado-derecha-arriba"></div></td>
+					<td><p class="circulo" id="Aspirante"></p></td>
+					<td>	<div class="Caja"></div><div class="cuerpo lado-derecha-arriba"></div></td>
+					<td><p class="circulo" id="ConTeorico"></p></td>
+					<td>	<div class="Caja"></div><div class="cuerpo lado-derecha-arriba"></div></td>
+					<td><p class="circulo" id="ConPractico"></p></td>
+					<td>	<div class="Caja"></div><div class="cuerpo lado-derecha-arriba"></div></td>
+					<td><p class="circulo" id="ConTodo"></p></td>
+					<td>	<div class="Caja"></div><div class="cuerpo lado-derecha-arriba"></div></td>
+					<td><p class="circulo" id="Brigadistas"></p></td>
+				</tr>
+
+				<tr>
+					<td></td><td><div class="cuerpo"></td><td><div class="cuerpo"></td><td><div class="cuerpo"></td><td><div class="cuerpo"></td><td> <div class="cuerpo2 abajo-izquierda"></div></td>
+				</tr>
 
 
+				<tr>
+					<td><p class="circulo" id="Reprobados"></p></td>
+				</tr>
+				<tr>
+					<td>Reprobado</td>
+				</tr>
+			</table>
+		
 			<br>
-			<p>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reprobado 
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brigadista
-			</p>
-			<p class="circulo" id="Reprobados"></p>
-			<p class="circulo" id="Brigadistas"></p>
+	
 
-
+		
+			
 		</div>
-
-
-
 <!-- 		------------------------------------------------------------------------------ -->
 
 		<style type="text/css">
@@ -45,15 +67,79 @@
 				bottom:0px; /*Abajo deje un espacio de 0px*/
 				height:150px; /*alto del div*/
 				z-index:0;
-			}
-			.Description{
+			}.Description{
 				right: 400px;
 				background-color: white;
-
 			}
 
-		</style>	
+			.cuerpo {
+                width: 100px;
+                height: 25px;
+                background: red;
+                position: relative;
+            }
+            .cuerpo2 {
+                width: 25px;
+                height:100px;
+                background: red;
+                position: relative;
+            }
 
+
+            .lado-derecha-arriba:before {
+        		content: "";
+        		position: absolute;
+        	    top: 0;
+        		left: 100px;
+        		width: 0;
+        		height: 0;
+        		border-width: 12px;
+        		border-style: solid;
+        		border-color:  transparent transparent transparent red;
+            }
+           
+            .abajo-izquierda:before {
+                content: "";
+                position: absolute;
+                bottom: -12px;
+                left: 0;
+                width: 0;
+                height: 0;
+                border-width: 13px 13px 0;
+                border-style: solid;
+                border-color: red transparent transparent;
+
+            }
+            .cuerpo{
+              
+            }
+            .cuerpo2{
+           
+            }
+
+
+            .Caja {
+                width: 50px;
+                height: 100px;
+                background: black;
+                position: absolute;
+                z-index: 1;
+                text-align: center;
+                margin-left: 25px;
+                margin-top: -30px;	
+               
+            }
+
+
+
+            #Reprobados{
+            	margin-top: 100px;
+            }
+
+
+
+
+		</style>	
 <!-- 		------------------------------------------------------------------------------ -->
 	</head>
 	<body>
