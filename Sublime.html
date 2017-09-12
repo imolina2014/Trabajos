@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!-- saved from url=(0085)http://www.desarrollolibre.net/public/download/contenedor/contenedor-con-flechas.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+        <title>Truco CSS: Construir flechas en los contenedores HTML</title>
+        <link rel="stylesheet" href="./Prueba_files/example.css">
+        <style>
+
+            .cuerpo {
+                width: 100px;
+                height: 50px;
+                background: red;
+                position: relative;
+            }
+            .cuerpo2 {
+                width: 50px;
+                height:100px;
+                background: red;
+                position: relative;
+            }
+
+            .lado-derecha-arriba:before {
+		  content: "";
+		  position: absolute;
+		  top: 0;
+		  left: 100px;
+		  width: 0;
+		  height: 0;
+		  border-width: 25px;
+		  border-style: solid;
+		  border-color:  transparent transparent transparent red;
+            }
+           
+            .abajo-izquierda:before {
+                content: "";
+                position: absolute;
+                bottom: -25px;
+                left: 0;
+                width: 0;
+                height: 0;
+                border-width: 25px 25px 0;
+                border-style: solid;
+                border-color: red transparent transparent;
+            }
+
+     
+
+            .cuerpo{
+                margin:50px auto;
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <section>
+
+            <div class="cuerpo lado-derecha-arriba"></div>
+
+            <div class="cuerpo2 abajo-izquierda"></div>
+
+        </section>
+    
+
+
+</body></html>
